@@ -30,7 +30,6 @@ void image_filter_thread()
         Canny(raw1, filtered, a1, a2, 3);
         qq2.enqueue(filtered);
 
-
     }
     std::this_thread::sleep_for(std::chrono::milliseconds(20));
     }
@@ -59,9 +58,6 @@ MainWindow::MainWindow(QWidget *parent)
     m_capture.open(0);
     a1=ui->th1->value();
     a2=ui->th2->value();
-
-
-
 
 }
 
@@ -92,8 +88,6 @@ void MainWindow::onCapTimerUpdate( void )
     {
         return;
     }
-//printf("image cap %d %d\n", camera_img.rows, camera_img.cols);
-
 
 #if RGB_GRAY
     // displayt rgb color image.
@@ -101,7 +95,6 @@ void MainWindow::onCapTimerUpdate( void )
     cv::cvtColor(camera_img, rgb_img, cv::COLOR_BGR2RGB);
 
     QImage image1(rgb_img.data, rgb_img.cols, rgb_img.rows, QImage::Format_RGB888);
-
 
     cv::Mat gray;
     cv::cvtColor(camera_img, gray, cv::COLOR_RGB2GRAY);
@@ -117,9 +110,6 @@ void MainWindow::onCapTimerUpdate( void )
         m_graphics_scene1->clear();
         m_graphics_scene1->addPixmap(QPixmap::fromImage(image1));
         ui->graphicsView1->setScene(m_graphics_scene1);
-
-
-
 
 
 }
