@@ -37,7 +37,8 @@ cond(no)->e
 op1->op2->op3->e
 ``` -->
 ![alt main](img/flowchart2.png)
-图像显示线程
+
+## 图像显示线程
 <!-- ```mermaid
 flowchat
 st=>start: 开始
