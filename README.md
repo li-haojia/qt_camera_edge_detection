@@ -4,12 +4,12 @@
 采集到的图像通过线程间同步,传递给图像处理线程，图像处理工作为提取图像边缘，处理完成后把边缘图像传递到显示线程
 
 ## 结果
-![alt result](img\result.png)
+![alt result](img/result.png)
 
 
 ## 程序结构
 ### 主程序
-```mermaid
+<!-- ```mermaid
 flowchat
 st=>start: 开始
 e=>end: 结束
@@ -18,9 +18,11 @@ op2=>operation: 将图像转换为灰度图
 op3=>operation: 生产者：装入qq1中
 
 st->op1->op2->op3->e
-```
-图像处理线程(边缘提取)
-```mermaid
+``` -->
+![alt main](img/flowchart1.png)
+
+### 图像处理线程(边缘提取)
+<!-- ```mermaid
 flowchat
 st=>start: 开始
 e=>end: 结束
@@ -33,10 +35,10 @@ st->cond
 cond(yes)->op1
 cond(no)->e
 op1->op2->op3->e
-```
-
+``` -->
+![alt main](img/flowchart2.png)
 图像显示线程
-```mermaid
+<!-- ```mermaid
 flowchat
 st=>start: 开始
 e=>end: 结束
@@ -47,9 +49,12 @@ st->cond
 cond(yes)->op1
 cond(no)->e
 op1->e
-```
+``` -->
+![alt main](img/flowchart3.png)
 
+### UML
 
+![alt main](img/uml.png)
 
 
 ## 依赖
